@@ -1,0 +1,12 @@
+predicted = model.predict(X)
+predicted = scaler.inverse_transform(predicted)
+actual = scaler.inverse_transform(y.reshape(-1, 1))
+
+plt.figure(figsize=(14,6))
+plt.plot(actual, label='Actual Price')
+plt.plot(predicted, label='Predicted Price')
+plt.title('Stock Price Prediction')
+plt.xlabel('Time')
+plt.ylabel('Price')
+plt.legend()
+plt.show()
